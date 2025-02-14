@@ -7,19 +7,19 @@ import ShareCard from '@/components/ShareCard.vue'
 import CardModal from '@/components/CardModal.vue'
 import { ChatBox } from '@/components/Chat'
 import { useChatStore } from '@/stores'
-import { useIsMac } from '@/utils'
 import CommandModal from '@/components/command/CommandModal.vue'
-import { useCommandModal } from '@/components/command/commandModal'
 
 const showChatBox = ref(false)
+// import { useIsMac } from '@/utils'
+// import { useCommandModal } from '@/components/command/commandModal'
 const showShareCard = ref(false)
 const showSetting = ref(false)
 const showFileUploadPanel = ref(false)
-const isMac = useIsMac()
+// const isMac = useIsMac()
 
 // const buttonList = useButton()
 
-const { openCommandModal } = useCommandModal()
+// const { openCommandModal } = useCommandModal()
 
 // function useButton() {
 //   const GITHUB_URL = 'https://github.com/xianjianlf2/MindGeniusAI'
