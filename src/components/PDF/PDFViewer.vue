@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import '@xianjianlf2/vue-pdf-viewer/dist/style.css'
 
+// import '@xianjianlf2/vue-pdf-viewer/dist/style.css'
 // import type { PdfViewerSearchInstance } from '@xianjianlf2/vue-pdf-viewer'
 // import { PdfViewerSearch } from '@xianjianlf2/vue-pdf-viewer'
 const props = defineProps({
