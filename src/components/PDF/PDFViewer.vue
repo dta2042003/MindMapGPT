@@ -1,9 +1,9 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { PdfViewerSearchInstance } from '@xianjianlf2/vue-pdf-viewer'
-import { PdfViewerSearch } from '@xianjianlf2/vue-pdf-viewer'
 import '@xianjianlf2/vue-pdf-viewer/dist/style.css'
 
+// import type { PdfViewerSearchInstance } from '@xianjianlf2/vue-pdf-viewer'
+// import { PdfViewerSearch } from '@xianjianlf2/vue-pdf-viewer'
 const props = defineProps({
   fileName: {
     type: String,
@@ -11,11 +11,11 @@ const props = defineProps({
   },
 })
 
-const pdfRef = ref<PdfViewerSearchInstance>()
+// const pdfRef = ref<PdfViewerSearchInstance>()
 const pdfUrl = ref(props.fileName)
 const pageCount = ref(0)
 const page = ref('1')
-const showAllPage = ref(true)
+// const showAllPage = ref(true)
 const containerRef = ref()
 
 watch(() => props.fileName, (newVal) => {
@@ -30,13 +30,13 @@ watch(() => props.fileName, (newVal) => {
 <template>
   <div v-if="pdfUrl" class="h-full flex flex-col overflow-hidden">
     <div ref="containerRef" class="flex-1">
-      <PdfViewerSearch
+      <!-- <PdfViewerSearch
         ref="pdfRef" v-model:showAllPage="showAllPage" :src="pdfUrl" :show-toolbar="false"
-      />
+      /> -->
     </div>
   </div>
 </template>
 
 <style scoped>
 
-</style> -->
+</style>
