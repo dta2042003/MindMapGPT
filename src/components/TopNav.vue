@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { Icon } from '@iconify/vue'
+import { NButton } from 'naive-ui'
 import { v4 as uuidv4 } from 'uuid'
 import FileUploadPanel from './FileUploadPanel.vue'
 import Setting from '@/components/Setting'
@@ -7,43 +9,43 @@ import ShareCard from '@/components/ShareCard.vue'
 import CardModal from '@/components/CardModal.vue'
 import { ChatBox } from '@/components/Chat'
 import { useChatStore } from '@/stores'
+import { useIsMac } from '@/utils'
 import CommandModal from '@/components/command/CommandModal.vue'
+import { useCommandModal } from '@/components/command/commandModal'
 
 const showChatBox = ref(false)
-// import { useIsMac } from '@/utils'
-// import { useCommandModal } from '@/components/command/commandModal'
 const showShareCard = ref(false)
 const showSetting = ref(false)
 const showFileUploadPanel = ref(false)
-// const isMac = useIsMac()
+const isMac = useIsMac()
 
-// const buttonList = useButton()
+const buttonList = useButton()
 
-// const { openCommandModal } = useCommandModal()
+const { openCommandModal } = useCommandModal()
 
-// function useButton() {
-//   const GITHUB_URL = 'https://github.com/xianjianlf2/MindGeniusAI'
-//   function handleOpenGitHub(url: string) {
-//     window.open(url, '_blank')
-//   }
+function useButton() {
+  const GITHUB_URL = 'https://github.com/xianjianlf2/MindGeniusAI'
+  function handleOpenGitHub(url: string) {
+    window.open(url, '_blank')
+  }
 
-//   const buttonList = ref([
-//     {
-//       icon: 'uil:setting',
-//       handler: () => showSetting.value = true,
-//     },
-//     {
-//       icon: 'material-symbols:share',
-//       handler: () => showShareCard.value = true,
-//     },
-//     {
-//       icon: 'mdi:github',
-//       handler: () => handleOpenGitHub(GITHUB_URL),
-//     },
-//   ])
+  const buttonList = ref([
+    {
+      icon: 'uil:setting',
+      handler: () => showSetting.value = true,
+    },
+    {
+      icon: 'material-symbols:share',
+      handler: () => showShareCard.value = true,
+    },
+    {
+      icon: 'mdi:github',
+      handler: () => handleOpenGitHub(GITHUB_URL),
+    },
+  ])
 
-//   return buttonList
-// }
+  return buttonList
+}
 
 function openChatBox() {
   showChatBox.value = true
@@ -77,17 +79,17 @@ onMounted(() => {
     </div>
 
     <div class="items-center flex justify-center gap-2 bg-gradient-to-r ">
-      <!-- <NButton @click="openCommandModal()">
+      <NButton @click="openCommandModal()">
         <template #icon>
           <Icon icon="material-symbols:keyboard-alt-outline" color="white" />
         </template>
         {{ isMac ? 'Command + k' : 'Ctrl + k' }}
-      </NButton> -->
-      <!-- <NButton v-for="item in buttonList" :key="item.icon" quaternary circle @click="item.handler">
+      </NButton>
+      <NButton v-for="item in buttonList" :key="item.icon" quaternary circle @click="item.handler">
         <template #icon>
           <Icon :icon="item.icon" width="36" color="white" />
         </template>
-      </NButton> -->
+      </NButton>
     </div>
   </div>
 
