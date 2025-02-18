@@ -74,14 +74,14 @@ const buttonList = ref([
       props.graph.redo()
     },
   },
-  {
-    icon: 'ic:baseline-fit-screen',
-    text: 'fit screen',
-    tooltip: 'fit screen',
-    handler: () => {
-      props.graph.zoomToFit({ padding: 20 })
-    },
-  },
+  // {
+  //   icon: 'ic:baseline-fit-screen',
+  //   text: 'fit screen',
+  //   tooltip: 'fit screen',
+  //   handler: () => {
+  //     props.graph.zoomToFit({ padding: 20 })
+  //   },
+  // },
   {
     icon: 'material-symbols:output-rounded',
     rotate: 3,
